@@ -5,7 +5,11 @@ A project made for a Secure Programming class
 Make a virtual environmente for Python
 
 Then Run
-('pip install -r requirements.txt')
+'''
+pip install -r requirements.txt
+'''
 
 after its finished run
-('python app.py')
+'''
+python app.py
+'''
