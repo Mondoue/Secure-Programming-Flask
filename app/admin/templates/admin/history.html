@@ -1,0 +1,42 @@
+{% extends "admin/base.html" %}
+
+{% block title %}
+	Admin History - Technovision
+{% endblock %}
+<script src="https://js.stripe.com/v3/"></script>
+{% block content %}
+	{% with msgs =  get_flashed_messages(with_categories=True) %}
+	{% for c, msg in msgs %}
+		{% if c == 'error' %}
+			<div class="flash-error">
+		{% else %}
+			<div class="success">
+		{% endif %}
+			{{ msg }}</div><br>
+	{% endfor %}
+	{% endwith %}
+
+    {% if not logs %}
+		<div class="flash-error">No Logs have been recorded yet.</div>
+	{% else %}
+    
+    <table class="table table-striped">
+        <tr>
+            <th>Log ID</th>
+            <th>User</th>
+			<th>Date</th>
+			<th>Ip Address</th>
+        </tr>
+    {% for log in logs %}
+    <tr>
+        <td>{{ log.id }}</td>
+		<td>{{ log.name }}</td>
+		<td>{{ log.date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        <td>{{ log.ip }}</td>
+    </tr>
+{% endfor %}
+
+    </table>
+
+	{% endif %}
+{% endblock %}</div>
