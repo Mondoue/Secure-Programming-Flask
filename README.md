@@ -2,7 +2,7 @@
 A project made for a Secure Programming class
 
 # How to Install
-Make a virtual environmente for Python
+Make a virtual environment for Python
 
 Then Run
 ```
